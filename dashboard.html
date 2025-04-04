@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Digital Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #3b82f6;
+            transition: width 0.5s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <div class="w-64 bg-blue-800 text-white p-4 shadow-lg">
+            <div class="flex items-center space-x-2 mb-8">
+                <i class="fas fa-laptop-code text-2xl"></i>
+                <span class="text-xl font-bold">Digital Learning</span>
+            </div>
+            <nav>
+                <a href="dashboard.html" class="flex items-center space-x-2 bg-blue-700 text-white px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses/word.html" class="flex items-center space-x-2 text-blue-200 hover:bg-blue-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-file-word"></i>
+                    <span>Word Course</span>
+                </a>
+                <a href="courses/excel.html" class="flex items-center space-x-2 text-blue-200 hover:bg-blue-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Excel Course</span>
+                </a>
+                <a href="courses/powerpoint.html" class="flex items-center space-x-2 text-blue-200 hover:bg-blue-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-file-powerpoint"></i>
+                    <span>PowerPoint Course</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2 text-blue-200 hover:bg-blue-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="index.html" class="flex items-center space-x-2 text-blue-200 hover:bg-blue-700 px-4 py-3 rounded-lg">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-2xl font-bold text-gray-800">Welcome back, <span id="username">User</span>!</h1>
+                <div class="relative">
+                    <i class="fas fa-bell text-gray-500 text-xl cursor-pointer"></i>
+                    <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                </div>
+            </div>
+
+            <!-- Progress Overview -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Your Learning Progress</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Word Progress -->
+                    <div class="course-card bg-white border border-gray-200 rounded-lg p-4 transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-file-word text-blue-600"></i>
+                            </div>
+                            <h3 class="font-medium">Word Course</h3>
+                        </div>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>30% Complete</span>
+                            <span>3/10 Modules</span>
+                        </div>
+                    </div>
+
+                    <!-- Excel Progress -->
+                    <div class="course-card bg-white border border-gray-200 rounded-lg p-4 transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-file-excel text-green-600"></i>
+                            </div>
+                            <h3 class="font-medium">Excel Course</h3>
+                        </div>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 10%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>10% Complete</span>
+                            <span>1/12 Modules</span>
+                        </div>
+                    </div>
+
+                    <!-- PowerPoint Progress -->
+                    <div class="course-card bg-white border border-gray-200 rounded-lg p-4 transition duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-orange-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-file-powerpoint text-orange-600"></i>
+                            </div>
+                            <h3 class="font-medium">PowerPoint Course</h3>
+                        </div>
+                        <div class="progress-bar mb-2">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Not Started</span>
+                            <span>0/8 Modules</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Recent Activity</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-check text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Completed Module 3: Advanced Formatting</p>
+                            <p class="text-sm text-gray-500">Word Course • 2 days ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-trophy text-green-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Scored 85% on Module 2 Quiz</p>
+                            <p class="text-sm text-gray-500">Excel Course • 4 days ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-2 rounded-full mr-3">
+                            <i class="fas fa-book-open text-purple-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">Started Module 1: Introduction to Excel</p>
+                            <p class="text-sm text-gray-500">Excel Course • 1 week ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
