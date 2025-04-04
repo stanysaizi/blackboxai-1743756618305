@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Course | Digital Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .module-card { transition: all 0.3s ease; }
+        .module-card:hover { transform: translateY(-3px); }
+        .active-module { border-left: 4px solid #10b981; }
+        .sandbox { min-height: 300px; border: 1px solid #e5e7eb; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; }
+        th { background-color: #f3f4f6; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <div class="w-64 bg-green-800 text-white p-4 shadow-lg">
+            <div class="flex items-center space-x-2 mb-8">
+                <i class="fas fa-file-excel text-2xl"></i>
+                <span class="text-xl font-bold">Excel Course</span>
+            </div>
+            <nav>
+                <a href="../../dashboard.html" class="flex items-center space-x-2 text-green-200 hover:bg-green-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </a>
+                <h3 class="text-sm uppercase tracking-wider text-green-300 px-4 py-2">Modules</h3>
+                <a href="#intro" class="module-card flex items-center space-x-2 bg-green-700 text-white px-4 py-3 rounded-lg mb-2 active-module">
+                    <i class="fas fa-play-circle"></i>
+                    <span>1. Excel Basics</span>
+                </a>
+                <a href="#formulas" class="module-card flex items-center space-x-2 text-green-200 hover:bg-green-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="far fa-circle"></i>
+                    <span>2. Formulas & Functions</span>
+                </a>
+                <a href="#charts" class="module-card flex items-center space-x-2 text-green-200 hover:bg-green-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="far fa-circle"></i>
+                    <span>3. Charts & Graphs</span>
+                </a>
+                <a href="#data" class="module-card flex items-center space-x-2 text-green-200 hover:bg-green-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="far fa-circle"></i>
+                    <span>4. Data Analysis</span>
+                </a>
+                <a href="#pivots" class="module-card flex items-center space-x-2 text-green-200 hover:bg-green-700 px-4 py-3 rounded-lg mb-2">
+                    <i class="far fa-circle"></i>
+                    <span>5. Pivot Tables</span>
+                </a>
+            </nav>
+            <div class="mt-8 pt-4 border-t border-green-700">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm">Course Progress</span>
+                    <span class="text-sm font-medium">10%</span>
+                </div>
+                <div class="w-full bg-green-700 rounded-full h-2">
+                    <div class="bg-white rounded-full h-2" style="width: 10%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8 overflow-y-auto">
+            <div class="max-w-4xl mx-auto">
+                <!-- Current Module -->
+                <div id="intro" class="mb-12">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">1. Excel Basics</h2>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Active</span>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">What You'll Learn</h3>
+                        <ul class="space-y-2 list-disc pl-5">
+                            <li>Understanding the Excel interface</li>
+                            <li>Navigating workbooks and worksheets</li>
+                            <li>Basic data entry and formatting</li>
+                            <li>Simple calculations and auto-fill</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Video Lesson</h3>
+                        <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center text-gray-500">
+                                <i class="fas fa-play-circle text-5xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Practice Exercise</h3>
+                        <div class="sandbox p-4 rounded-lg bg-gray-50 mb-4">
+                            <table>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true">Notebook</td>
+                                    <td contenteditable="true">5</td>
+                                    <td contenteditable="true">2.50</td>
+                                    <td>=B2*C2</td>
+                                </tr>
+                                <tr>
+                                    <td contenteditable="true">Pen</td>
+                                    <td contenteditable="true">10</td>
+                                    <td contenteditable="true">1.20</td>
+                                    <td>=B3*C3</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-right font-bold">Grand Total:</td>
+                                    <td>=SUM(D2:D3)</td>
+                                </tr>
+                            </table>
+                            <p class="text-sm text-gray-500 mt-2">Try editing the quantities and prices to see the calculations update.</p>
+                        </div>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Submit Exercise</button>
+                    </div>
+
+                    <div class="flex justify-between mt-8">
+                        <button class="text-green-600 hover:text-green-800 flex items-center" disabled>
+                            <i class="fas fa-arrow-left mr-2"></i> Previous
+                        </button>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 flex items-center">
+                            Mark Complete <i class="fas fa-check ml-2"></i>
+                        </button>
+                        <button class="text-green-600 hover:text-green-800 flex items-center">
+                            Next <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Modules -->
+                <div class="mt-12">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Upcoming Modules</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Module 2 -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-200">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-file-excel text-green-600"></i>
+                                </div>
+                                <h4 class="font-medium">2. Formulas & Functions</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Learn SUM, AVERAGE, IF, VLOOKUP and other essential functions.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-lock mr-1"></i>
+                                <span>Available after completing Module 1</span>
+                            </div>
+                        </div>
+
+                        <!-- Module 3 -->
+                        <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-200">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-file-excel text-green-600"></i>
+                                </div>
+                                <h4 class="font-medium">3. Charts & Graphs</h4>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Create and customize various chart types to visualize data.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-lock mr-1"></i>
+                                <span>Available after completing Module 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../scripts/main.js"></script>
+    <script>
+        // Mark module complete button
+        document.querySelector('.module-card.active-module + button').addEventListener('click', function() {
+            // Update progress
+            const newProgress = updateCourseProgress('excel', 1, 100);
+            
+            // Update UI
+            document.querySelector('.progress-fill').style.width = `${newProgress}%`;
+            document.querySelector('.progress-percent').textContent = `${newProgress}%`;
+            
+            // Unlock next module
+            document.querySelector('[href="#formulas"]').classList.remove('text-green-200', 'hover:bg-green-700');
+            document.querySelector('[href="#formulas"]').classList.add('bg-green-700', 'text-white');
+            document.querySelector('[href="#formulas"] i').classList.remove('far', 'fa-circle');
+            document.querySelector('[href="#formulas"] i').classList.add('fas', 'fa-play-circle');
+            
+            alert('Module marked complete! You can now proceed to Module 2.');
+        });
+    </script>
+</body>
+</html>
