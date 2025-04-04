@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-800 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-laptop-code text-2xl"></i>
+                <span class="text-xl font-bold">Digital Learning</span>
+            </div>
+            <div class="space-x-4">
+                <a href="login-signup.html" class="hover:text-blue-200">Login</a>
+                <a href="login-signup.html" class="bg-white text-blue-800 px-4 py-2 rounded hover:bg-blue-100">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image Carousel -->
+    <section class="relative h-96 overflow-hidden">
+        <!-- Carousel Images -->
+        <div class="absolute inset-0 flex transition-transform duration-1000 ease-in-out" id="ministry-carousel">
+            <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg')"></div>
+            <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg')"></div>
+            <div class="min-w-full h-full bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg')"></div>
+        </div>
+        
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="container mx-auto px-4 text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Ministry of ICT Digital Learning</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Master Computer Essentials through our interactive training program</p>
+                <a href="login-signup.html" class="bg-white text-blue-800 font-bold px-8 py-3 rounded-full hover:bg-blue-100 transition duration-300">Start Learning Now</a>
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <button id="prev-btn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="next-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-30 text-white p-2 rounded-full hover:bg-opacity-50">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <!-- Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('ministry-carousel');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentIndex = 0;
+            const totalSlides = 3;
+
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+
+            // Auto-rotate every 5 seconds
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
+        });
+    </script>
+
+    <!-- Courses Section -->
+    <section class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Courses</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Word Course -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg" alt="Microsoft Word" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-word text-blue-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Microsoft Word</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Master document creation, formatting, and advanced features in Word.</p>
+                    <a href="courses/word.html" class="text-blue-600 font-medium hover:text-blue-800">View Course →</a>
+                </div>
+            </div>
+
+            <!-- Excel Course -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Microsoft Excel" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-excel text-green-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Microsoft Excel</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Learn formulas, functions, and data analysis techniques in Excel.</p>
+                    <a href="courses/excel.html" class="text-blue-600 font-medium hover:text-blue-800">View Course →</a>
+                </div>
+            </div>
+
+            <!-- PowerPoint Course -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg" alt="Microsoft PowerPoint" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-powerpoint text-orange-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Microsoft PowerPoint</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Create stunning presentations with animations and transitions.</p>
+                    <a href="courses/powerpoint.html" class="text-blue-600 font-medium hover:text-blue-800">View Course →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Digital Learning Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
